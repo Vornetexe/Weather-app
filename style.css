@@ -897,3 +897,253 @@ body.night-mode .temperature-chart svg circle {
     fill: #2dd4bf;
 }
 
+
+/* Mobile layout  */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    overflow-x: clip;
+}
+
+body {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+}
+
+.app-header,
+main,
+.app-footer {
+    width: 100%;
+    min-width: 0;
+}
+
+main {
+    padding-left: clamp(12px, 4vw, 28px);
+    padding-right: clamp(12px, 4vw, 28px);
+}
+
+.app-header {
+    padding: 20px 16px;
+}
+
+.app-header h1 {
+    font-size: clamp(1.6rem, 6vw, 2.4rem);
+    overflow-wrap: anywhere;
+}
+
+.main-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.nav-button {
+    min-height: 44px;
+    max-width: 100%;
+}
+
+#search-form,
+#add-favorite-form {
+    width: 100%;
+    min-width: 0;
+}
+
+.search-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+}
+
+.search-controls input {
+    flex: 1 1 180px;
+    width: 100%;
+    min-width: 0;
+}
+
+.search-controls button {
+    flex: 0 0 auto;
+    min-height: 44px;
+}
+
+input,
+select,
+button {
+    max-width: 100%;
+    font: inherit;
+}
+
+.unit-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.unit-controls select {
+    min-width: 0;
+}
+
+.current-weather,
+.forecast-section,
+#add-favorite-form {
+    min-width: 0;
+    padding: clamp(14px, 4vw, 24px);
+    border-radius: 18px;
+}
+
+.current-weather-main {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+.current-icon {
+    flex-shrink: 0;
+}
+
+.weather-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.weather-details p {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.hourly-forecast {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    padding: 6px 2px 14px;
+}
+
+.hourly-item {
+    flex: 0 0 88px;
+    min-width: 0;
+}
+
+.daily-forecast {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+}
+
+.daily-item {
+    min-width: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+}
+
+.temperature-chart {
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.temperature-chart svg {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.favorites-list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+}
+
+.favorite-item {
+    min-width: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.favorite-city-button {
+    flex: 1 1 120px;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.favorite-edit-button,
+.favorite-remove-button {
+    min-height: 40px;
+}
+
+button {
+    touch-action: manipulation;
+}
+
+@media (max-width: 480px) {
+    main {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .app-header {
+        padding: 18px 12px;
+    }
+
+    .main-navigation {
+        width: 100%;
+    }
+
+    .nav-button {
+        flex: 1 1 120px;
+    }
+
+    .search-controls {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .search-controls input,
+    .search-controls button {
+        width: 100%;
+    }
+
+    .weather-details {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .daily-item {
+        grid-template-columns: minmax(0, 1fr) auto;
+    }
+
+    .daily-item > :last-child {
+        grid-column: 1 / -1;
+    }
+
+    .forecast-section h2,
+    .current-weather h2 {
+        overflow-wrap: anywhere;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
